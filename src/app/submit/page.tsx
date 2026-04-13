@@ -1,13 +1,13 @@
 "use client";
 
 import { useSearchParams } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useEffect, useState, Suspense } from "react";
 import { DICT, Language } from "@/lib/i18n";
 
 type TraitPair = [string, string]; // e.g. ['R','A']
 const AXES: TraitPair[] = [['R','A'], ['L','E'], ['C','D'], ['S','U']];
 
-export default function SubmitPage() {
+function SubmitContent() {
   const searchParams = useSearchParams();
   const session = searchParams.get("session") || "UNKNOWN";
   const rawAns = searchParams.get("ans") || "";
@@ -296,5 +296,13 @@ export default function SubmitPage() {
 
       </main>
     </div>
+  );
+}
+
+export default function SubmitPage() {
+  return (
+    <Suspense fallback={<div style={{ minHeight: '100dvh', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#718096' }}>努力加载人格数据中...</div>}>
+      <SubmitContent />
+    </Suspense>
   );
 }
