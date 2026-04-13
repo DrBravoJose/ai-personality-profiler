@@ -327,7 +327,7 @@ function SubmitContent() {
                             textDecoration: 'none', marginBottom: 20, boxShadow: '0 4px 14px rgba(234, 179, 8, 0.4)'
                           }}>
                             {lang === 'zh' ? (
-                              <>🔑 购买解锁口令 <s style={{ opacity: 0.6, fontWeight: 400, margin: '0 4px' }}>¥19.9</s> ¥9.9</>
+                              <>🔑 购买解锁口令 <s style={{ opacity: 0.6, fontWeight: 400, margin: '0 4px' }}>$9.99</s> $4.99</>
                             ) : (
                               <>🔑 Purchase License Key <s style={{ opacity: 0.6, fontWeight: 400, margin: '0 4px' }}>$9.99</s> $4.99</>
                             )}
