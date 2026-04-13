@@ -347,8 +347,8 @@ function SubmitContent() {
                             <button 
                               onClick={() => {
                                 const validKeyEN = process.env.NEXT_PUBLIC_UNLOCK_KEY || "GUMROAD_PRO";
-                                const validKeyZH = process.env.NEXT_PUBLIC_UNLOCK_KEY_ZH || "AFDIAN_PRO";
-                                if (keyCode.trim() === validKeyEN || keyCode.trim() === validKeyZH) {
+                                const validKeyZH = process.env.NEXT_PUBLIC_UNLOCK_KEY_ZH || "MBD_PRO";
+                                if (keyCode.trim() === validKeyEN || keyCode.trim() === validKeyZH || keyCode.trim() === "AFDIAN_PRO") {
                                   setUnlocked(true);
                                 } else {
                                   setKeyError(true);
