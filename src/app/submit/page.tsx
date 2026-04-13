@@ -19,6 +19,11 @@ function SubmitContent() {
   const [guideCopied, setGuideCopied] = useState(false);
   const [isExporting, setIsExporting] = useState(false);
 
+  // Paywall State
+  const [unlocked, setUnlocked] = useState(false);
+  const [keyCode, setKeyCode] = useState('');
+  const [keyError, setKeyError] = useState(false);
+
   const reportRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -289,13 +294,72 @@ function SubmitContent() {
 
                     <p style={{ fontSize: '0.8125rem', color: '#e2e8f0', marginBottom: 16 }}>{dict.tuningResultDesc}</p>
 
-                    <div style={{
-                      background: '#0d1117', border: '1px solid #2d3748', borderRadius: 8, padding: 16,
-                      fontSize: '0.75rem', color: '#3fb950', lineHeight: 1.6, marginBottom: 16,
-                      whiteSpace: 'pre-wrap', fontFamily: 'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace',
-                      maxHeight: '400px', overflowY: 'auto'
-                    }}>
-                      {guideText}
+                    <div style={{ position: 'relative' }}>
+                      <div style={{
+                        background: '#0d1117', border: '1px solid #2d3748', borderRadius: 8, padding: 16,
+                        fontSize: '0.75rem', color: '#3fb950', lineHeight: 1.6, marginBottom: 16,
+                        whiteSpace: 'pre-wrap', fontFamily: 'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace',
+                        maxHeight: '400px', overflowY: 'auto',
+                        filter: unlocked ? 'none' : 'blur(5px)',
+                        userSelect: unlocked ? 'text' : 'none',
+                        transition: 'filter 0.3s ease'
+                      }}>
+                        {guideText}
+                      </div>
+
+                      {/* Paywall Overlay */}
+                      {!unlocked && (
+                        <div style={{
+                          position: 'absolute', top: 0, left: 0, right: 0, bottom: 16,
+                          display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center',
+                          background: 'rgba(13, 17, 23, 0.75)', borderRadius: 8, zIndex: 10,
+                          padding: 20, textAlign: 'center'
+                        }}>
+                          <div style={{ fontSize: 24, marginBottom: 12 }}>🔒</div>
+                          <h4 style={{ color: '#fff', fontSize: '1rem', marginBottom: 8 }}>{lang === 'zh' ? '解锁高级调教指令' : 'Unlock Premium Prompts'}</h4>
+                          <p style={{ color: '#a0aec0', fontSize: '0.8125rem', marginBottom: 20 }}>
+                            {lang === 'zh' ? '获取专业级 System Override 指令，极致压榨 AI 潜能。' : 'Get professional System Override directives to maximize AI potential.'}
+                          </p>
+                          
+                          <a href={process.env.NEXT_PUBLIC_STORE_LINK || "https://388811932798.gumroad.com/l/ai-personality"} target="_blank" rel="noopener noreferrer" style={{
+                            display: 'inline-block', background: '#eab308', color: '#1a202c', 
+                            padding: '10px 24px', borderRadius: 8, fontSize: '0.875rem', fontWeight: 700, 
+                            textDecoration: 'none', marginBottom: 20, boxShadow: '0 4px 14px rgba(234, 179, 8, 0.4)'
+                          }}>
+                            {lang === 'zh' ? '🔑 购买解锁口令 (¥9.9)' : '🔑 Purchase License Key ($4.99)'}
+                          </a>
+
+                          <div style={{ display: 'flex', gap: 8, width: '100%', maxWidth: 280 }}>
+                            <input 
+                              type="text" 
+                              placeholder={lang === 'zh' ? '输入你的解锁口令' : 'Enter License Key'}
+                              value={keyCode}
+                              onChange={(e) => { setKeyCode(e.target.value); setKeyError(false); }}
+                              style={{
+                                flex: 1, padding: '8px 12px', borderRadius: 6, border: `1px solid ${keyError ? '#ef4444' : '#4a5568'}`,
+                                background: '#1a202c', color: '#fff', fontSize: '0.875rem', outline: 'none'
+                              }}
+                            />
+                            <button 
+                              onClick={() => {
+                                const validKey = process.env.NEXT_PUBLIC_UNLOCK_KEY || "GUMROAD_PRO";
+                                if (keyCode.trim() === validKey) {
+                                  setUnlocked(true);
+                                } else {
+                                  setKeyError(true);
+                                }
+                              }}
+                              style={{
+                                background: '#3b82f6', color: '#fff', border: 'none', borderRadius: 6,
+                                padding: '0 16px', fontSize: '0.875rem', fontWeight: 600, cursor: 'pointer'
+                              }}
+                            >
+                              {lang === 'zh' ? '验证' : 'Verify'}
+                            </button>
+                          </div>
+                          {keyError && <span style={{ color: '#ef4444', fontSize: '0.75rem', marginTop: 8 }}>{lang === 'zh' ? '口令错误，请重试' : 'Invalid key. Please try again.'}</span>}
+                        </div>
+                      )}
                     </div>
 
                     <button className="mbti-btn" onClick={() => {
@@ -303,9 +367,12 @@ function SubmitContent() {
                       setGuideCopied(true);
                       setTimeout(() => setGuideCopied(false), 2500);
                     }} style={{
-                      width: '100%', background: guideCopied ? '#38a169' : '#e2e8f0',
-                      color: guideCopied ? '#fff' : '#1a202c', border: 'none', fontSize: '0.875rem',
-                    }}>
+                      width: '100%', 
+                      background: !unlocked ? '#4a5568' : (guideCopied ? '#38a169' : '#e2e8f0'),
+                      color: !unlocked ? '#a0aec0' : (guideCopied ? '#fff' : '#1a202c'), 
+                      border: 'none', fontSize: '0.875rem',
+                      cursor: !unlocked ? 'not-allowed' : 'pointer'
+                    }} disabled={!unlocked}>
                       {guideCopied ? '✅ Copied to Clipboard' : dict.tuningCopy}
                     </button>
                   </div>
