@@ -321,13 +321,13 @@ function SubmitContent() {
                             {lang === 'zh' ? '获取专业级 System Override 指令，极致压榨 AI 潜能。' : 'Get professional System Override directives to maximize AI potential.'}
                           </p>
                           
-                          <a href={process.env.NEXT_PUBLIC_STORE_LINK || "https://388811932798.gumroad.com/l/ai-personality?code=PH50"} target="_blank" rel="noopener noreferrer" style={{
+                          <a href={lang === 'zh' ? (process.env.NEXT_PUBLIC_STORE_LINK_ZH || "https://afdian.net/a/YOUR_AFDIAN_ID") : (process.env.NEXT_PUBLIC_STORE_LINK || "https://388811932798.gumroad.com/l/ai-personality?code=PH50")} target="_blank" rel="noopener noreferrer" style={{
                             display: 'inline-block', background: '#eab308', color: '#1a202c', 
                             padding: '10px 24px', borderRadius: 8, fontSize: '0.875rem', fontWeight: 700, 
                             textDecoration: 'none', marginBottom: 20, boxShadow: '0 4px 14px rgba(234, 179, 8, 0.4)'
                           }}>
                             {lang === 'zh' ? (
-                              <>🔑 购买解锁口令 <s style={{ opacity: 0.6, fontWeight: 400, margin: '0 4px' }}>$9.99</s> $4.99</>
+                              <>🔑 购买解锁口令 <s style={{ opacity: 0.6, fontWeight: 400, margin: '0 4px' }}>¥19.9</s> ¥9.9</>
                             ) : (
                               <>🔑 Purchase License Key <s style={{ opacity: 0.6, fontWeight: 400, margin: '0 4px' }}>$9.99</s> $4.99</>
                             )}
@@ -346,8 +346,9 @@ function SubmitContent() {
                             />
                             <button 
                               onClick={() => {
-                                const validKey = process.env.NEXT_PUBLIC_UNLOCK_KEY || "GUMROAD_PRO";
-                                if (keyCode.trim() === validKey) {
+                                const validKeyEN = process.env.NEXT_PUBLIC_UNLOCK_KEY || "GUMROAD_PRO";
+                                const validKeyZH = process.env.NEXT_PUBLIC_UNLOCK_KEY_ZH || "AFDIAN_PRO";
+                                if (keyCode.trim() === validKeyEN || keyCode.trim() === validKeyZH) {
                                   setUnlocked(true);
                                 } else {
                                   setKeyError(true);
