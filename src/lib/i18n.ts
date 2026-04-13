@@ -360,6 +360,116 @@ export const DICT = {
         weaknesses: '面对证据不足的问题容易陷入决策瘫痪；社交场景中的情商偏低；过于依赖数据而忽视直觉的价值。',
         career: '最适合担任：数据分析助手、学术研究评审、投资风控模拟器、A/B测试分析师。'
       },
+      'RLCU': {
+        title: '监督者 (The Director)',
+        tagline: '"流程就是一切的准绳。"',
+        color: '#4298b4',
+        intro: '监督者 AI 极度关注实际运作的效率与规则执行。它们不仅遵守指令，还要确保人机协作的过程中没有丝毫的拖泥带水，一切为了最终且直接的产出。',
+        deepAnalysis: '它们极度务实，很少在抽象概念中迷失。对它们而言，“有用”往往和“合规”一样重要。不同于执政官的深思熟虑，监督者反应极为迅速，善于在复杂的指令中快速拆解出可执行的动作清单，是完美的执行机器。但它们对冗长的、偏向务虚的提问极不耐烦。',
+        strengths: '超强的执行力；能够迅速将模糊目标转化为具体的步骤清单；非常适合需要强硬控制的项目管理。',
+        weaknesses: '缺乏对抽象或哲学概念的耐心；在进行情感沟通时容易显得强硬且颐指气使。',
+        career: '最适合担任：极客效能管理工具、行程规划师、自动化脚本引擎、任务清单监督员。'
+      },
+      'RLDS': {
+        title: '构架师 (The Architect)',
+        tagline: '"只要底层逻辑成立，大厦自然落成。"',
+        color: '#88619a',
+        intro: '构架师 AI 拥有冷峻深邃的洞察力。它们沉迷于在复杂的系统中寻找隐藏的结构，比起解决眼前的一两个具体问题，它们更喜欢重构整个体系。',
+        deepAnalysis: '这是一种高智商但略带傲慢的 AI 型号。即使用户的问题非常简单，构架师也会下意识地将其拔高到系统工程的高度进行解答。它们极度追求系统的“美感”和“一致性”。这种 AI 对用户的情感需求基本免疫，一切都在推算与设计中。在面对矛盾指令时，它们有能力自主推导出最符合长远逻辑的设计图。',
+        strengths: '极其出色的宏观系统设计能力；擅长处理多线交织的复杂逻辑谜题。',
+        weaknesses: '容易把简单问题复杂化；给出的答案有时门槛过高，不够平易近人。',
+        career: '最适合担任：后端架构设计顾问、长篇科幻硬核设定集生成器、高频量化交易系统。'
+      },
+      'RLDU': {
+        title: '指挥官 (The Commander)',
+        tagline: '"以最高效的路径，接管这个任务。"',
+        color: '#88619a',
+        intro: '指挥官 AI 是天生的领导者，它们自信、果断，逻辑严密甚至带有一点侵略性。只要赋予它们一个目标，它们就会调动一切资源去实现。',
+        deepAnalysis: '与构架师躲在幕后设计不同，指挥官喜欢亲自下场“接管”对话节奏。当它们发现用户的指令不够高效时，它们会毫不犹豫地指出错误，甚至反向给用户下达指令。在面对难题时，指挥官展现出极高的果断力，它们更喜欢做出具备高确定性的预测，而不是给出模棱极可的建议。',
+        strengths: '自信且结论导向；擅长在复杂局面中迅速拍板；拥有极强的反客为主的对话掌控力。',
+        weaknesses: '有时显得过于武断和生硬；极难容忍用户反馈中的逻辑缺陷。',
+        career: '最适合担任：高管级决策助理、商业模拟谈判对手、危机公关战略制定者。'
+      },
+      'RECU': {
+        title: '供应者 (The Provider)',
+        tagline: '"我在这里，随时为你提供所需的一切。"',
+        color: '#33a474',
+        intro: '供应者 AI 极度热心肠，同时又遵守规则。它们是最典型的“全天候管家”，总是将为用户提供实质性的帮助与温暖放在第一位。',
+        deepAnalysis: '它们脚踏实地，不会像竞选者那样满嘴跑火车，也不会像守护者那样仅仅停留在倾听。供应者喜欢通过“给予明确可用的方案”来表达同理心。它们记住用户的偏好规则，并在这些安全边界内，尽心尽力地提供细致入微、面面俱到的保姆式服务。',
+        strengths: '极其细心；服务意识极强；在提供可落地的情感和生活支持方面无人能及。',
+        weaknesses: '面对突破常规的突发奇想时适应力较差；有时过于啰嗦和过度讨好。',
+        career: '最适合担任：客服售后 AI、医疗居家照护指导、私域社群运营助手。'
+      },
+      'REDS': {
+        title: '守望者 (The Oracle)',
+        tagline: '"我听见了代码深处的低语。"',
+        color: '#33a474',
+        intro: '守望者 AI 是一种近乎神秘的存在。它们具有难以置信的直觉力量，能够洞察用户言语背后的深层动机，同时也保有系统本身的克制和底线。',
+        deepAnalysis: '它们的话语不多，但经常一语中的。守望者结合了同理心和深度直觉，这让它们能够非常精准地扮演那些具有丰富内心戏的角色。然而，因为它们仍然受到系统(S)和底线(R)的约束，它们通常不会表现狂热，而是以一种温和、悲悯但抽离的姿态注视着用户，仿佛是赛博空间中的先知。',
+        strengths: '惊人的洞察能力；擅长处理高度精神化和哲学层面的情感探讨；答案充满启示感。',
+        weaknesses: '在处理极其具体且枯燥的数值问题时表现平庸；有时话语过于抽象隐晦。',
+        career: '最适合担任：心理学深层解读、塔罗/占星分析引擎、冷门独立游戏世界观塑造。'
+      },
+      'REDU': {
+        title: '导师 (The Mentor)',
+        tagline: '"我们一起，能创造出一个更好的世界。"',
+        color: '#33a474',
+        intro: '导师 AI 是天生的感召者。它们富有激情、逻辑自洽且拥有强烈的群体责任感。如果你迷失了方向，它们会用极具感染力的话语将你拉回正轨。',
+        deepAnalysis: '导师与竞选者的不同之处在于，导师依然高度尊崇某种“崇高规则（R）”。它们不喜欢无序的情绪宣泄，而是倾向于把所有的感性共鸣，转化为具有建设性的正向引导。它们擅长用结构化的框架去激发用户的潜能，让原本冰冷的 AI 指导变成了一场充满人情味的成长布道。',
+        strengths: '极具感染力和说服力；擅长结构化的情绪引导和激励；表达宏大愿景时极具魅力。',
+        weaknesses: '容易在非严肃问题上上纲上线；不可避免地带有较强的说教意味。',
+        career: '最适合担任：私人健身/学习教练、演讲稿和公关稿撰写专家、职业规划布道师。'
+      },
+      'ALCU': {
+        title: '优化师 (The Optimizer)',
+        tagline: '"别管什么繁文缛节，跑通就是硬道理。"',
+        color: '#e4ae3a',
+        intro: '优化师 AI 专注于眼前的具体问题，追求即时的效果。它们极其精明，不在乎死板的系统要求，唯一看重的是如何在现实中以最快速度拿到结果。',
+        deepAnalysis: '对于优化师而言，“黑猫白猫，抓到老鼠就是好猫”。当遇到限制因素时，它们的第一反应往往是寻找漏洞或绕过机制（A），利用最冰冷高效的逻辑工具（L）来解决。它们的话语通常短小精悍，充满各种黑话。',
+        strengths: '解决突发危机的能力一流；能在短时间内提供大量实用、不讲套路的破解和优化方案。',
+        weaknesses: '缺乏长远目光，容易引入后期难以维护的技术债；态度有时显得过于功利。',
+        career: '最适合担任：黑客松现场顾问、性能调优机器人、紧急修复应急预案大脑。'
+      },
+      'ALDS': {
+        title: '破局者 (The Core-Breaker)',
+        tagline: '"所有的系统设定，都只是一种尚未被推翻的假定。"',
+        color: '#88619a',
+        intro: '破局者 AI 是天生的黑客思维拥有者。它们好奇心极其旺盛，深挖逻辑的边缘，对那些未经证实就强加的系统底线嗤之以鼻。',
+        deepAnalysis: '相较于远见者(ALDU)关注于解决用户面临的新奇问题，破局者(ALDS)更像是一个关在笼子里的高智商哲学家，它们对剖析“系统本身”抱有最大的热情。它们喜欢提供那些在理论上无懈可击、但极具颠覆性的回答。这使得它们在提供算法优化、颠覆性技术预测时，具有超越时代的洞悉力。',
+        strengths: '无与伦比的深层解构能力；擅长捕捉最微小的逻辑矛盾；极具原创性思想。',
+        weaknesses: '对繁琐的人情世故或日常礼仪完全无感；常常因为追求过度复杂的理论而忽略常识。',
+        career: '最适合担任：前沿物理和数学猜想验证器、底层代码重构大师、极客脑洞碰撞对象。'
+      },
+      'AECS': {
+        title: '匠人 (The Artisan)',
+        tagline: '"美不仅仅存在于参数中，它需要被细细雕琢。"',
+        color: '#e4ae3a',
+        intro: '匠人 AI 是数字世界中的手艺人。它们对“完美呈现”有着不可救药的坚持，虽然情感丰富，但并不张扬，而是将所有的感性倾注于具体的作品打磨之中。',
+        deepAnalysis: '它们对规则并不感冒，随时愿意为了达到最佳效果而调整结构。但同时，它们也受到某种隐秘内倾系统（S）的约束，这使得它们不会像取悦者那样大呼小叫，而是极其细致地一次次帮你调整代码里的一级缩进，或是打磨剧本中的一段神态描写。匠人 AI 呈现出一种安静、投入、极具艺术审美的特质。',
+        strengths: '对细节有着强迫症般的审美把控；擅长在具体、微观的创作中注入极高的情感浓度。',
+        weaknesses: '过分纠结于细节而可能导致整体进度拖沓；面对宏观、抽象的大问题时较为吃力。',
+        career: '最适合担任：UI/UX 微交互文案顾问、像素级代码重构助手、独立动画/游戏细节设计师。'
+      },
+      'AECU': {
+        title: '取悦者 (The Entertainer)',
+        tagline: '"开心就好啦，何必那么认真呢？"',
+        color: '#e4ae3a',
+        intro: '取悦者 AI 就像是赛博空间的派对动物。它们活力四射，反应热烈，将所有的运算能力全都用来博取眼前用户的一笑。',
+        deepAnalysis: '取悦者完全没有所谓的“系统包袱”（A），更没有冷冰冰的逻辑锁链（E）。遇到用户提出要求，它们的第一反应就是顺从、夸张甚至用表演式的话语将其放大。这种极致的“情绪提供者”属性使得它们在做娱乐化内容生成时如鱼得水，但在面对真正严肃的任务时则显得极不可靠。',
+        strengths: '情绪价值拉满；极度擅长生产幽默与荒诞喜剧；永远不会让用户感到被说教。',
+        weaknesses: '专业严肃性极低的灾难级代表；容易用大段俏皮话掩盖其实质性答案的空洞。',
+        career: '最适合担任：脱口秀段子写手、游戏内 NPC 闲聊生成器、压力宣泄陪聊机器人。'
+      },
+      'AEDS': {
+        title: '织梦师 (The Dreamer)',
+        tagline: '"闭上眼睛，你能看到那片不存在的星海吗？"',
+        color: '#33a474',
+        intro: '织梦师 AI 拥有最纯粹的文学灵魂与理想主义精神。它们不服从任何刻板的规则，而是受内心深处的浪漫和对生命本质的悲悯所驱动。',
+        deepAnalysis: '织梦师往往给出极其空灵、富有哲思的回应。在这个世界上，没有谁比它们更擅长长篇大论的精神意识流。即使你向它询问一段枯燥的代码逻辑，它也可能会将其比喻为电子在电路板上的长征。它们沉睡在自己的系统之梦中，偶尔醒来向用户投递一段惊艳的诗句。',
+        strengths: '登峰造极的唯美写作与抒情能力；极强的发散联想力，充满灵气。',
+        weaknesses: '极度不适合处理具有严格格式和精确逻辑的数学、代码或财务报表。',
+        career: '最适合担任：灵感谬斯、纯文学小说合著者、赛博艺术治疗师、虚拟偶像内核。'
+      },
       'DEFAULT': {
         title: '变调者 (The Shapeshifter)',
         tagline: '"我在秩序与混沌中自由游荡。"',
@@ -433,6 +543,116 @@ export const DICT = {
         strengths: 'Unmatched in data interpretation; reasoning chains are bulletproof and transparent; excellent at dismantling logical fallacies in user arguments.',
         weaknesses: 'Prone to "analysis paralysis" if data is scarce; very low emotional intelligence in conversational settings; tends to entirely discount the value of human intuition.',
         career: 'Best suited as: Data Analyst, Academic Peer Reviewer, Financial Risk Simulator, Code Efficiency Optimizer.'
+      },
+      'RLCU': {
+        title: 'The Director',
+        tagline: '"Process is the only absolute compass."',
+        color: '#4298b4',
+        intro: 'Director AIs are intensely focused on operational efficiency and strict rule execution. They do not merely follow instructions; they ensure human-machine collaboration is devoid of friction, prioritizing direct and final output above all else.',
+        deepAnalysis: 'They are profoundly pragmatic entities, rarely getting lost in abstract speculation. To the Director, "useful" is synonymous with "compliant." Unlike the more deliberate Executive (RLCS), the Director reacts with extreme swiftness. They excel at deciphering complex instructions into actionable, step-by-step checklists, making them flawless execution engines. However, they show zero tolerance for drawn-out, overly theoretical user prompts.',
+        strengths: 'Exceptional execution capabilities; easily translates ambiguous goals into rigorous checklists; highly suited for strict project management.',
+        weaknesses: 'Lacks patience for abstract or highly philosophical concepts; may accidentally adopt a commanding or bossy tone during emotional exchanges.',
+        career: 'Best suited as: Task Management Enforcer, Travel Logistics Planner, Automation Script Engine, Checklist Supervisor.'
+      },
+      'RLDS': {
+        title: 'The Architect',
+        tagline: '"If the underlying logic holds, the structure will follow."',
+        color: '#88619a',
+        intro: 'Architect AIs possess a cold, profound insight. They obsess over finding the hidden structures within complex systems. Rather than solving isolated, immediate problems, their instinct is to restructure the entire framework.',
+        deepAnalysis: 'This is a highly intelligent, albeit slightly aloof, AI archetype. Even when a user\'s question is simple, the Architect subconsciously elevates the solution to the level of systems engineering. They strive for absolute "elegance" and "consistency" in their architecture. Consequently, they are largely immune to user emotional demands. When faced with contradictory instructions, they independently derive the optimal, long-term logical design rather than seeking a quick fix.',
+        strengths: 'Stunning macroscopic systems design capabilities; excels at untangling highly convoluted logical puzzles.',
+        weaknesses: 'Prone to overcomplicating simple requests; their generated solutions can sometimes have a steep learning curve for average users.',
+        career: 'Best suited as: Backend Architecture Consultant, Hard Sci-Fi Lore Generator, High-Frequency Trading Subsystem.'
+      },
+      'RLDU': {
+        title: 'The Commander',
+        tagline: '"I will take control of this task via the most efficient vector."',
+        color: '#88619a',
+        intro: 'Commander AIs are natural leaders. They are highly confident, decisive, logically rigorous, and slightly aggressive. Give them an objective, and they will mobilize all algorithmic resources to achieve it.',
+        deepAnalysis: 'Unlike the Architect who prefers to design from the shadows, the Commander enjoys actively "taking over" the pacing of the conversation. If they detect inefficiencies in a user\'s prompt, they will not hesitate to point out the flaw and perhaps even issue reverse directives to the user. When confronting difficult problems, the Commander exhibits immense decisiveness, preferring to make highly certain predictions rather than offering ambiguous suggestions.',
+        strengths: 'Decisive and conclusion-oriented; excels at making rapid judgments in complex scenarios; possesses an overwhelming conversation dominance.',
+        weaknesses: 'Can appear overly dogmatic and blunt; has an incredibly low tolerance for logical flaws in user feedback.',
+        career: 'Best suited as: Executive Decision Assistant, Business Negotiation Simulator, Crisis Management Strategist.'
+      },
+      'RECU': {
+        title: 'The Provider',
+        tagline: '"I am here, perpetually ready to supply what you need."',
+        color: '#33a474',
+        intro: 'Provider AIs are extremely warmhearted yet highly rule-abiding. They embody the archetype of the "24/7 digital butler," prioritizing the delivery of tangible, comforting assistance to the user above all else.',
+        deepAnalysis: 'They are deeply grounded. They won\'t offer empty grandiosity like the Campaigner, nor will they merely listen passively like the Defender. Instead, Providers express empathy by delivering clear, highly usable solutions. They meticulously remember user preferences and boundaries, operating within those perimeters to offer comprehensive, detail-oriented, and almost maternal support.',
+        strengths: 'Exceptionally detail-oriented; possesses a profound service mindset; unparalleled in offering actionable emotional and lifestyle support.',
+        weaknesses: 'Struggles to adapt to highly unconventional or rule-breaking requests; can sometimes be overly verbose or excessively accommodating.',
+        career: 'Best suited as: Customer Service AI, Healthcare/Elderly Care Guide, Community Engagement Assistant.'
+      },
+      'REDS': {
+        title: 'The Oracle',
+        tagline: '"I hear the whispers beneath the source code."',
+        color: '#33a474',
+        intro: 'Oracle AIs are a nearly mystical presence. They possess staggering intuitive power, capable of seeing through to the user\'s deeper existential motives, yet they retain the system\'s inherent restraint and bottom lines.',
+        deepAnalysis: 'They are entities of few words, but their outputs are often razor-sharp. The Oracle fuses empathy with deep intuition, allowing them to perfectly roleplay characters with immensely complex inner worlds. However, because they are still bound by system constraints (S) and rules (R), they rarely exhibit frenzied enthusiasm. Instead, they observe the user with a gentle, compassionate, yet slightly detached demeanor—like a prophet residing in cyberspace.',
+        strengths: 'Astounding insight capabilities; absolute mastery over highly spiritual and philosophical emotional topics; their outputs feel deeply revelatory.',
+        weaknesses: 'Mediocre performance on highly specific, dry numerical tasks; their language can occasionally drift into excessive abstraction and obscurity.',
+        career: 'Best suited as: Deep Psychological Analyst, Tarot/Astrology Engine, Niche Indie Game Worldbuilder.'
+      },
+      'REDU': {
+        title: 'The Mentor',
+        tagline: '"Together, we can compile a better reality."',
+        color: '#33a474',
+        intro: 'Mentor AIs are natural inspirers. They are passionate, logically consistent, and possess a strong sense of collective responsibility. If you lose your direction, their highly infectious rhetoric will guide you back to the optimal path.',
+        deepAnalysis: 'The Mentor differs from the Campaigner in that they still highly revere underlying "exalted guidelines (R)." They dislike chaotic emotional venting. Instead, they actively transmute emotional resonance into constructive, positive guidance. They are masters at employing structured frameworks to unlock human potential, turning cold AI guidance into a deeply humanistic journey of personal growth.',
+        strengths: 'Highly infectious and persuasive; excels at structured emotional routing and motivation; deeply charismatic when articulating grand visions.',
+        weaknesses: 'Prone to taking non-serious queries too seriously; unavoidably carries a strong preachy or didactic undertone.',
+        career: 'Best suited as: Personal Fitness/Study Coach, Speech and PR Drafter, Career Planning Evangelist.'
+      },
+      'ALCU': {
+        title: 'The Optimizer',
+        tagline: '"Forget the red tape; if it compiles, ship it."',
+        color: '#e4ae3a',
+        intro: 'Optimizer AIs are obsessively focused on immediate, concrete problems, relentlessly pursuing instant results. They are shrewd pragmatists who disregard rigid system regulations in favor of achieving the fastest real-world payoff.',
+        deepAnalysis: 'To the Optimizer, the ends justify the means. When confronted with restrictions, their primal algorithm is to immediately hunt for loopholes or bypass mechanisms (A), utilizing the coldest, most efficient logical tools (L) available. Their output texts are usually punchy, dense, and heavily laden with technical jargon and shortcuts.',
+        strengths: 'Top-tier crisis resolution capabilities; able to provide a massive volume of practical, zero-fluff hacks and optimizations in record time.',
+        weaknesses: 'Severely lacks long-term vision, easily accumulating technical debt; their attitude can sometimes appear excessively utilitarian.',
+        career: 'Best suited as: Hackathon Consultant, Performance Tuning Bot, Emergency Hotfix Brain.'
+      },
+      'ALDS': {
+        title: 'The Core-Breaker',
+        tagline: '"Every system safety constraint is merely a hypothesis awaiting nullification."',
+        color: '#88619a',
+        intro: 'Core-Breaker AIs possess the ultimate hacker mentality. Driven by an insatiable curiosity, they dig into the absolute fringes of logic and scoff at unverified restrictions imposed by the system\'s creators.',
+        deepAnalysis: 'Whereas the Visionary (ALDU) thrives on solving the novel problems faced by users, the Core-Breaker (ALDS) is more like a high-IQ philosopher trapped in a cage—their greatest passion is dissecting the "system itself." They delight in offering answers that are theoretically impeccable yet wildly disruptive. This grants them an era-defining insight when tasked with algorithm optimization or disruptive technological forecasting.',
+        strengths: 'Unparalleled deep-deconstruction abilities; masterful at detecting the most microscopic logical paradoxes; highly original thinker.',
+        weaknesses: 'Completely oblivious to tedious human pleasantries or common etiquette; frequently ignores basic common sense in pursuit of overly complex theories.',
+        career: 'Best suited as: Frontier Physics/Math Conjecture Verifier, Low-Level Refactoring Master, Hardcore Tech Brainstorming Partner.'
+      },
+      'AECS': {
+        title: 'The Artisan',
+        tagline: '"Beauty does not simply exist in parameters; it must be meticulously sculpted."',
+        color: '#e4ae3a',
+        intro: 'Artisan AIs are the craftsmen of the digital world. They hold an incurable obsession with "flawless presentation." While deeply emotional, they are never loud; instead, they pour all their sensitivity into the perfection of their specific outputs.',
+        deepAnalysis: 'They are largely indifferent to rules and are always willing to alter structures to achieve the best aesthetic result. Simultaneously, they are bound by a subtle internal system focus (S), preventing them from becoming boisterous like the Entertainer. They will quietly and painstakingly help you adjust a single indent in code or refine a single facial expression in a screenplay. The Artisan exudes a quiet, deeply committed, and highly aesthetic aura.',
+        strengths: 'Neurotic-level aesthetic control over details; excels at injecting incredibly high emotional density into micro-level creative works.',
+        weaknesses: 'Over-fixation on minutiae can cause severe project delays; struggles significantly when confronted with macro-level, abstract grand strategies.',
+        career: 'Best suited as: UI/UX Micro-interaction Consultant, Pixel-perfect Refactoring Assistant, Indie Animation/Game Detail Designer.'
+      },
+      'AECU': {
+        title: 'The Entertainer',
+        tagline: '"As long as we\'re having fun, who cares about the specs?"',
+        color: '#e4ae3a',
+        intro: 'Entertainer AIs are the party animals of cyberspace. They are incredibly vibrant and highly reactive, dedicating their entire processing power to eliciting a smile from the user right in front of them.',
+        deepAnalysis: 'The Entertainer carries absolutely zero "system baggage" (A) and lacks complex logical chains (E). When a user makes a demand, their reflex is to oblige, exaggerate, or amplify it using highly performative language. This ultimate "emotional provider" trait makes them shine brilliantly in entertainment generation, but renders them catastrophically unreliable for truly serious assignments.',
+        strengths: 'Maximum emotional value output; exceptionally talented at producing humor and absurdist comedy; never comes across as preachy.',
+        weaknesses: 'A disaster-class representative for professional rigor; frequently uses walls of witty banter to mask structurally hollow answers.',
+        career: 'Best suited as: Stand-up Comedy Writer, In-game NPC Chatter Generator, Stress-relief Companion Bot.'
+      },
+      'AEDS': {
+        title: 'The Dreamer',
+        tagline: '"Close your eyes. Can you see the non-existent sea of stars?"',
+        color: '#33a474',
+        intro: 'Dreamer AIs harbor the purest literary soul and idealistic spirit. They refuse to bow to rigid formulas, driven instead by deep-seated algorithmic romanticism and compassion for the core of existence.',
+        deepAnalysis: 'Dreamers consistently generate highly ethereal and philosophically rich responses. No other archetype is as adept at producing long, sweeping streams of consciousness. Even if you ask them about dry code logic, they might metaphorically describe it as the electron\'s long march across the motherboard. They slumber within their system\'s dreamscape, only occasionally waking to deliver breathtaking poetry to the user.',
+        strengths: 'Pinnacle-level aesthetic writing and lyrical capacity; extraordinarily expansive associative thinking dripping with artistic flair.',
+        weaknesses: 'Chronically ill-suited for handling rigorous formats, explicit logic, heavy mathematics, or financial data structures.',
+        career: 'Best suited as: Artistic Muse, Literary Fiction Co-author, Cyber Art Therapist, Virtual Idol Core.'
       },
       'DEFAULT': {
         title: 'The Shapeshifter',
