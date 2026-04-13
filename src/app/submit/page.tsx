@@ -28,13 +28,13 @@ function SubmitContent() {
   const dict = DICT[lang];
 
   // Parse 12 answers
-  const parsed = rawAns.toUpperCase().padEnd(12, 'A').replace(/[^AB]/g, 'A');
+  const parsed = rawAns.toUpperCase().padEnd(60, 'A').replace(/[^AB]/g, 'A');
   const countB = (s: string) => s.split('').filter(c => c === 'B').length;
-  const groups = [parsed.substring(0,3), parsed.substring(3,6), parsed.substring(6,9), parsed.substring(9,12)];
+  const groups = [parsed.substring(0,15), parsed.substring(15,30), parsed.substring(30,45), parsed.substring(45,60)];
 
   // Convert to 0-100 scale where 0 is 100% Left Trait, 100 is 100% Right Trait
   // Since there are 3 questions per group, countB goes 0,1,2,3 -> 0, 33, 67, 100
-  const basePcts = groups.map(g => Math.round((countB(g) / 3) * 100));
+  const basePcts = groups.map(g => Math.round((countB(g) / 15) * 100));
 
   const traits = [
     basePcts[0] < 50 ? 'R' : 'A',
