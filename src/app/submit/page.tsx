@@ -1,7 +1,7 @@
 "use client";
 
 import { useSearchParams } from "next/navigation";
-import { useEffect, useState, Suspense } from "react";
+import { useEffect, useState, Suspense, useRef } from "react";
 import { DICT, Language } from "@/lib/i18n";
 
 type TraitPair = [string, string]; // e.g. ['R','A']
@@ -17,6 +17,9 @@ function SubmitContent() {
   const [desiredPcts, setDesiredPcts] = useState<number[]>([]);
   const [showGuide, setShowGuide] = useState(false);
   const [guideCopied, setGuideCopied] = useState(false);
+  const [isExporting, setIsExporting] = useState(false);
+
+  const reportRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (langQuery === 'zh' || langQuery === 'en') setLang(langQuery);
@@ -102,6 +105,28 @@ function SubmitContent() {
     [dict.system, dict.user],
   ];
 
+  const handleExport = async () => {
+    if (!reportRef.current || isExporting) return;
+    setIsExporting(true);
+    try {
+      const html2canvas = (await import('html2canvas')).default;
+      const canvas = await html2canvas(reportRef.current, {
+        scale: 2,
+        useCORS: true,
+        backgroundColor: '#f7fafc'
+      });
+      const dataUrl = canvas.toDataURL('image/png');
+      const link = document.createElement('a');
+      link.download = `AI_Profile_${code}_${session.substring(0,6)}.png`;
+      link.href = dataUrl;
+      link.click();
+    } catch (err) {
+      console.error('Export failed', err);
+    } finally {
+      setIsExporting(false);
+    }
+  };
+
   return (
     <div style={{ minHeight: '100dvh', background: 'var(--bg-color)' }}>
       {/* Nav */}
@@ -119,8 +144,11 @@ function SubmitContent() {
 
       <main style={{ maxWidth: 560, margin: '0 auto', padding: '24px 16px 60px' }}>
 
-        {/* Hero */}
-        <div className="animate-slide-up" style={{ textAlign: 'center', marginBottom: 24 }}>
+        {/* Report Wrapper for Exporting */}
+        <div ref={reportRef} style={{ background: 'var(--bg-color)', paddingBottom: '1px' }}>
+          
+          {/* Hero */}
+          <div className="animate-slide-up" style={{ textAlign: 'center', marginBottom: 24, paddingTop: 16 }}>
           <div style={{ display: 'inline-block', padding: '4px 16px', borderRadius: 999, fontSize: 11, fontWeight: 700, letterSpacing: 3, color: '#fff', marginBottom: 12, background: profile.color || '#718096' }}>
             {code}
           </div>
@@ -286,10 +314,15 @@ function SubmitContent() {
             )}
           </div>
         )}
+        </div> {/* End Report Wrapper */}
 
-        {/* CTA */}
-        <div style={{ textAlign: 'center', paddingTop: 12 }}>
-          <button className="mbti-btn mbti-btn-primary" onClick={() => { window.location.href = '/'; }} style={{ padding: '14px 32px' }}>
+        {/* CTAs */}
+        <div style={{ textAlign: 'center', paddingTop: 12, display: 'flex', flexDirection: 'column', gap: 12 }}>
+          <button className="mbti-btn mbti-btn-primary" onClick={handleExport} disabled={isExporting} style={{ padding: '14px 32px' }}>
+            {isExporting ? '📸 ...' : `📷 ${dict.saveImage}`}
+          </button>
+          
+          <button className="mbti-btn" onClick={() => { window.location.href = '/'; }} style={{ padding: '14px 32px', background: '#e2e8f0', color: '#4a5568', border: 'none' }}>
             {lang === 'zh' ? '🔄 重新评估' : '🔄 Retake'}
           </button>
         </div>
