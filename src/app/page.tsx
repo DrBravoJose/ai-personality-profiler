@@ -1,12 +1,24 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { DICT, Language } from "@/lib/i18n";
 
 export default function Home() {
   const [sessionId, setSessionId] = useState("");
-  const [lang, setLang] = useState<Language>('zh');
+  const [lang, setLang] = useState<Language>('en'); // 默认英文
   const [copied, setCopied] = useState(false);
+
+  // 页面加载时自动检测浏览器语言
+  useEffect(() => {
+    if (typeof navigator !== 'undefined') {
+      const browserLang = navigator.language.toLowerCase();
+      if (browserLang.startsWith('zh')) {
+        setLang('zh');
+      } else {
+        setLang('en');
+      }
+    }
+  }, []);
 
   const dict = DICT[lang];
 
