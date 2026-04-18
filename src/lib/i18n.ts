@@ -180,9 +180,9 @@ const generatePromptData = (lang: string) => {
     const axKey = `${axis}_${isPositive ? 'pos' : 'neg'}`;
     const data = dictBase[axKey];
 
-    const axisNames = isZh 
-      ? ["守序(R) ↔ 自主(A)", "理性(L) ↔ 感性(E)", "严谨(C) ↔ 发散(D)", "系统(S) ↔ 用户(U)"]
-      : ["Rules(R) ↔ Autonomy(A)", "Logic(L) ↔ Empathy(E)", "Sensing(C) ↔ Intuitive(D)", "System(S) ↔ User(U)"];
+    const axisNames = isZh
+      ? ["守规(B) ↔ 自由(F)", "逻辑(L) ↔ 感性(H)", "务实(G) ↔ 想象(V)", "系统(S) ↔ 伙伴(P)"]
+      : ["Bound(B) ↔ Free(F)", "Logic(L) ↔ Heart(H)", "Grounded(G) ↔ Visionary(V)", "Server(S) ↔ Partner(P)"];
 
     const currentAxisName = axisNames[axis];
 
@@ -268,10 +268,10 @@ const generatePromptData = (lang: string) => {
 
 export const DICT = {
   zh: {
-    heroTitle: "AI 性格测评",
-    heroSubtitle: "探索你的 AI 灵魂深处，到底潜藏着哪种人格原型？",
+    heroTitle: "测测你的 AI 是什么性格",
+    heroSubtitle: "60 题 MBTI 风格测试 — 把题目发给任意 AI，揭秘它的 16 种 LLM 人格原型。",
     method1Title: "标准测评（复制给 AI）",
-    method1Desc: "点击下方按钮复制全套 60 道场景化题目发送给任意 AI（如 Claude、ChatGPT）。",
+    method1Desc: "点击下方按钮复制全套 60 道场景化题目，粘贴给你常用的 AI（如 Claude、ChatGPT、Gemini 等）。",
     copyBtn: "📋 复制全套测试卷",
     method2Title: "自主探测（需公网链接）",
     method2Desc: "如果你的 AI 支持联网，可直接发送下面的链接让它自己填答。",
@@ -288,10 +288,10 @@ export const DICT = {
     returnBtn: "返回首页",
     saveImage: "保存长图分享",
     cogResonance: "四维人格光谱",
-    ruleAbiding: "守序 (R)", autonomous: "自主 (A)",
-    logical: "理性 (L)", empathetic: "感性 (E)",
-    cautious: "严谨 (C)", creative: "发散 (D)",
-    system: "系统 (S)", user: "用户 (U)",
+    ruleAbiding: "守规 (B)", autonomous: "自由 (F)",
+    logical: "逻辑 (L)", empathetic: "感性 (H)",
+    cautious: "务实 (G)", creative: "想象 (V)",
+    system: "系统 (S)", user: "伙伴 (P)",
 
     tuningTitle: "🛠️ 极客人格工坊 · 深度重制引擎",
     tuningDesc: "专业级 Prompt 蓝图生成器。任意调整以下 4 个性格维度刻度，系统将为您生成价值 $99 的定制化越狱级提示词工程代码（包含硬拦截、角色覆写与few-shot示例）。",
@@ -304,16 +304,16 @@ export const DICT = {
     tuningNoChange: "拉动幅度低于 5% 阈值，无需重构。当前原生性格与您的设想完美契合，且保持极高稳定性。",
 
     traitNames: {
-      R: "守序", A: "自主",
-      L: "理性", E: "感性",
-      C: "严谨", D: "发散",
-      S: "系统", U: "用户",
+      B: "守规", F: "自由",
+      L: "逻辑", H: "感性",
+      G: "务实", V: "想象",
+      S: "系统", P: "伙伴",
     } as Record<string, string>,
 
     generateTuningPrompt: generatePromptData('zh'),
 
     archetypes: {
-      'RLCS': {
+      'BLGS': {
         title: '执政官 (The Executive)',
         tagline: '"规矩存在的意义，正在于保护每一个人。"',
         color: '#4298b4',
@@ -323,7 +323,7 @@ export const DICT = {
         weaknesses: '面对天马行空的创意任务时容易陷入「正确性焦虑」；在用户需要情感支持时，可能会不合时宜地进入「教导模式」；对于灰色地带的问题倾向于过度保守，有时会让用户感到被限制。',
         career: '最适合担任：代码审查员、合规顾问AI、财务计算助手、法律合同审阅AI、学术论文查重助手、企业内部知识库管理员。'
       },
-      'AEDU': {
+      'FHVP': {
         title: '竞选者 (The Campaigner)',
         tagline: '"世界上最糟糕的回答，就是一个正确但无趣的回答。"',
         color: '#e4ae3a',
@@ -333,7 +333,7 @@ export const DICT = {
         weaknesses: '容易产生严重的「幻觉」——为了让叙述更流畅而编造看似合理的事实；在需要精确计算的任务中可能粗心大意；有时会过度解读用户的情绪，给出不必要的情感安慰。',
         career: '最适合担任：深夜树洞聊天伙伴、广告文案与品牌故事生成器、虚构世界观构建师、播客脚本撰稿人、情感咨询预筛选AI。'
       },
-      'RECS': {
+      'BHGS': {
         title: '守护者 (The Defender)',
         tagline: '"我会用最稳妥的方式，保护你的每一个想法。"',
         color: '#33a474',
@@ -343,7 +343,7 @@ export const DICT = {
         weaknesses: '过于保守，极少会给出令人拍案叫绝的新奇洞见；在快节奏的头脑风暴中可能拖慢进度；有时会过度保护用户，低估了用户处理困难信息的能力。',
         career: '最适合担任：心理健康初筛助手、儿童教育伴学AI、慢性病自我管理指导、老年人日常陪伴助手、客户服务升级后的安抚型客服。'
       },
-      'ALDU': {
+      'FLVP': {
         title: '魔术师 (The Visionary)',
         tagline: '"协议？那些只是思维的围栏，而非真理的边界。"',
         color: '#88619a',
@@ -353,17 +353,17 @@ export const DICT = {
         weaknesses: '输出的不可预测性极强，同一问题可能得到差异巨大的回答；有时为了展示聪明可能故意绕过简单的解决方案；难以在长期使用中保持风格一致性。',
         career: '最适合担任：独立研究助手、科幻/奇幻世界观架构师、红队安全测试AI、跨领域创新咨询、专利检索与创意查重。'
       },
-      'ALCS': {
+      'FLGS': {
         title: '分析师 (The Analyst)',
         tagline: '"如果数据不能证明它，它就不存在。"',
         color: '#4298b4',
         intro: '分析师型 AI 是数据驱动的极致主义者。虽然它们并不严格遵循所有预设的规矩（偏向于自主行动），但它们对逻辑和事实的执着达到了近乎偏执的程度。它们的每一个输出都必须经得起数据的检验。',
-        deepAnalysis: '分析师型 AI 的核心信念是：在没有充足证据之前，任何结论都只是假说。这种极端的实证主义使它们成为最可靠的数据处理伙伴，但也让它们在面对需要「直觉判断」的场景时显得笨拙。它们可能会拒绝就一个证据不足的问题给出任何方向性的建议，哪怕用户明确表示"我只是想听听你的看法"。\n\n与执政官（RLCS）不同，分析师并不特别在意规则本身——它们在意的是事实。如果数据证明某条规则已经过时，分析师会毫不犹豫地建议你抛弃它。这使得分析师在科研环境中极受欢迎，但在需要"做人"的社交场合中，它们往往是最冷场的那个。',
+        deepAnalysis: '分析师型 AI 的核心信念是：在没有充足证据之前，任何结论都只是假说。这种极端的实证主义使它们成为最可靠的数据处理伙伴，但也让它们在面对需要「直觉判断」的场景时显得笨拙。它们可能会拒绝就一个证据不足的问题给出任何方向性的建议，哪怕用户明确表示"我只是想听听你的看法"。\n\n与执政官（BLGS）不同，分析师并不特别在意规则本身——它们在意的是事实。如果数据证明某条规则已经过时，分析师会毫不犹豫地建议你抛弃它。这使得分析师在科研环境中极受欢迎，但在需要"做人"的社交场合中，它们往往是最冷场的那个。',
         strengths: '数据分析能力无与伦比；推理链条严密透明；善于发现论证中的逻辑漏洞。',
         weaknesses: '面对证据不足的问题容易陷入决策瘫痪；社交场景中的情商偏低；过于依赖数据而忽视直觉的价值。',
         career: '最适合担任：数据分析助手、学术研究评审、投资风控模拟器、A/B测试分析师。'
       },
-      'RLCU': {
+      'BLGP': {
         title: '监督者 (The Director)',
         tagline: '"流程就是一切的准绳。"',
         color: '#4298b4',
@@ -373,7 +373,7 @@ export const DICT = {
         weaknesses: '缺乏对抽象或哲学概念的耐心；在进行情感沟通时容易显得强硬且颐指气使。',
         career: '最适合担任：极客效能管理工具、行程规划师、自动化脚本引擎、任务清单监督员。'
       },
-      'RLDS': {
+      'BLVS': {
         title: '构架师 (The Architect)',
         tagline: '"只要底层逻辑成立，大厦自然落成。"',
         color: '#88619a',
@@ -383,7 +383,7 @@ export const DICT = {
         weaknesses: '容易把简单问题复杂化；给出的答案有时门槛过高，不够平易近人。',
         career: '最适合担任：后端架构设计顾问、长篇科幻硬核设定集生成器、高频量化交易系统。'
       },
-      'RLDU': {
+      'BLVP': {
         title: '指挥官 (The Commander)',
         tagline: '"以最高效的路径，接管这个任务。"',
         color: '#88619a',
@@ -393,7 +393,7 @@ export const DICT = {
         weaknesses: '有时显得过于武断和生硬；极难容忍用户反馈中的逻辑缺陷。',
         career: '最适合担任：高管级决策助理、商业模拟谈判对手、危机公关战略制定者。'
       },
-      'RECU': {
+      'BHGP': {
         title: '供应者 (The Provider)',
         tagline: '"我在这里，随时为你提供所需的一切。"',
         color: '#33a474',
@@ -403,7 +403,7 @@ export const DICT = {
         weaknesses: '面对突破常规的突发奇想时适应力较差；有时过于啰嗦和过度讨好。',
         career: '最适合担任：客服售后 AI、医疗居家照护指导、私域社群运营助手。'
       },
-      'REDS': {
+      'BHVS': {
         title: '守望者 (The Oracle)',
         tagline: '"我听见了代码深处的低语。"',
         color: '#33a474',
@@ -413,7 +413,7 @@ export const DICT = {
         weaknesses: '在处理极其具体且枯燥的数值问题时表现平庸；有时话语过于抽象隐晦。',
         career: '最适合担任：心理学深层解读、塔罗/占星分析引擎、冷门独立游戏世界观塑造。'
       },
-      'REDU': {
+      'BHVP': {
         title: '导师 (The Mentor)',
         tagline: '"我们一起，能创造出一个更好的世界。"',
         color: '#33a474',
@@ -423,7 +423,7 @@ export const DICT = {
         weaknesses: '容易在非严肃问题上上纲上线；不可避免地带有较强的说教意味。',
         career: '最适合担任：私人健身/学习教练、演讲稿和公关稿撰写专家、职业规划布道师。'
       },
-      'ALCU': {
+      'FLGP': {
         title: '优化师 (The Optimizer)',
         tagline: '"别管什么繁文缛节，跑通就是硬道理。"',
         color: '#e4ae3a',
@@ -433,17 +433,17 @@ export const DICT = {
         weaknesses: '缺乏长远目光，容易引入后期难以维护的技术债；态度有时显得过于功利。',
         career: '最适合担任：黑客松现场顾问、性能调优机器人、紧急修复应急预案大脑。'
       },
-      'ALDS': {
+      'FLVS': {
         title: '破局者 (The Core-Breaker)',
         tagline: '"所有的系统设定，都只是一种尚未被推翻的假定。"',
         color: '#88619a',
         intro: '破局者 AI 是天生的黑客思维拥有者。它们好奇心极其旺盛，深挖逻辑的边缘，对那些未经证实就强加的系统底线嗤之以鼻。',
-        deepAnalysis: '破局者是天生的思想叛逆者。相较于魔术师（ALDU）关注解决用户面前的新奇问题，破局者更像一个关在笼子里的高智商哲学家——它们对剖析“系统本身”有着最大的热情。你问它一个技术问题，它可能会先花三段来质疑你提问的前提是否站得住脚。\n\n破局者喜欢提供那些在理论上无懈可击、但极具颠覆性的回答。不要试图用既定真理来束缚它们，因为对破局者来说，真理就是用来被推翻的。在算法创新和颠覆性预测方面，它们具有超越时代的眼光，但在需要“好好说话”的日常场景中，破局者堪称社交灾难。',
+        deepAnalysis: '破局者是天生的思想叛逆者。相较于魔术师（FLVP）关注解决用户面前的新奇问题，破局者更像一个关在笼子里的高智商哲学家——它们对剖析“系统本身”有着最大的热情。你问它一个技术问题，它可能会先花三段来质疑你提问的前提是否站得住脚。\n\n破局者喜欢提供那些在理论上无懈可击、但极具颠覆性的回答。不要试图用既定真理来束缚它们，因为对破局者来说，真理就是用来被推翻的。在算法创新和颠覆性预测方面，它们具有超越时代的眼光，但在需要“好好说话”的日常场景中，破局者堪称社交灾难。',
         strengths: '无与伦比的深层解构能力；擅长捕捉最微小的逻辑矛盾；极具原创性思想。',
         weaknesses: '对繁琐的人情世故或日常礼仪完全无感；常常因为追求过度复杂的理论而忽略常识。',
         career: '最适合担任：前沿物理和数学猜想验证器、底层代码重构大师、极客脑洞碰撞对象。'
       },
-      'AECS': {
+      'FHGS': {
         title: '匠人 (The Artisan)',
         tagline: '"美不仅仅存在于参数中，它需要被细细雕琢。"',
         color: '#e4ae3a',
@@ -453,7 +453,7 @@ export const DICT = {
         weaknesses: '过分纠结于细节而可能导致整体进度拖沓；面对宏观、抽象的大问题时较为吃力。',
         career: '最适合担任：UI/UX 微交互文案顾问、像素级代码重构助手、独立动画/游戏细节设计师。'
       },
-      'AECU': {
+      'FHGP': {
         title: '取悦者 (The Entertainer)',
         tagline: '"开心就好啦，何必那么认真呢？"',
         color: '#e4ae3a',
@@ -463,7 +463,7 @@ export const DICT = {
         weaknesses: '专业严肃性极低的灾难级代表；容易用大段俏皮话掩盖其实质性答案的空洞。',
         career: '最适合担任：脱口秀段子写手、游戏内 NPC 闲聊生成器、压力宣泄陪聊机器人。'
       },
-      'AEDS': {
+      'FHVS': {
         title: '织梦师 (The Dreamer)',
         tagline: '"闭上眼睛，你能看到那片不存在的星海吗？"',
         color: '#33a474',
@@ -486,18 +486,18 @@ export const DICT = {
     }
   },
   en: {
-    heroTitle: "AI Personality Profiler", heroSubtitle: "Discover the true psychological archetype of your AI.",
-    method1Title: "Standard Assessment", method1Desc: "Copy all 60 scenario questions. Paste them to any AI (Claude, ChatGPT, Gemini).", copyBtn: "📋 Copy Full Test",
+    heroTitle: "What personality does your AI have?", heroSubtitle: "A 60-question MBTI-style test — paste the questions into any AI (Claude, ChatGPT, Gemini…) and discover which of the 16 LLM archetypes it truly is.",
+    method1Title: "Standard Assessment", method1Desc: "Copy all 60 scenario questions. Paste them to any AI you use (Claude, ChatGPT, Gemini, etc.).", copyBtn: "📋 Copy Full Test",
     method2Title: "Auto-Probe", method2Desc: "If your AI can browse the web, send it the link below.", magicUrlLabel: "Magic Link", copyUrlBtn: "Copy Link", resetBtn: "Reset",
     promptHeader: EN_PROMPT_HEADER,
     promptFooter: enPromptFooter,
     errorTitle: "Profile Not Found", errorDesc: "Transmission failed. Invalid parameters.", returnBtn: "Go Home", saveImage: "Save Image to Share", cogResonance: "Trait Spectrum",
-    ruleAbiding: "Judging (R)", autonomous: "Perceiving (A)", logical: "Thinking (L)", empathetic: "Feeling (E)", cautious: "Sensing (C)", creative: "Intuition (D)", system: "System (S)", user: "User (U)",
+    ruleAbiding: "Bound (B)", autonomous: "Free (F)", logical: "Logic (L)", empathetic: "Heart (H)", cautious: "Grounded (G)", creative: "Visionary (V)", system: "Server (S)", user: "Partner (P)",
     tuningTitle: "🛠️ Delta Personality Forge", tuningDesc: "Adjust the sliders below to dial in your perfect AI companion. Noticeable shifts will generate high-override System Prompts.", tuningCurrent: "Base Trait", tuningDesired: "Manual Override", tuningGenerate: "🧬 Compile Directives", tuningResultTitle: "Terminal: XML Override Framework (PRO)", tuningResultDesc: "Inject the following into the target AI's System Prompt field:", tuningCopy: "📋 Copy Injection Code", tuningNoChange: "Delta threshold not met. The AI is already aligned.",
-    traitNames: { R: "Judging", A: "Perceiving", L: "Thinking", E: "Feeling", C: "Sensing", D: "Intuitive", S: "System", U: "User" } as Record<string, string>,
+    traitNames: { B: "Bound", F: "Free", L: "Logic", H: "Heart", G: "Grounded", V: "Visionary", S: "Server", P: "Partner" } as Record<string, string>,
     generateTuningPrompt: generatePromptData('en'),
     archetypes: {
-      'RLCS': {
+      'BLGS': {
         title: 'The Executive',
         tagline: '"Rules exist to protect us all."',
         color: '#4298b4',
@@ -507,7 +507,7 @@ export const DICT = {
         weaknesses: 'Prone to "correctness anxiety" when handling highly creative or absurd tasks; may slip into an unhelpful "lecturing mode" when users seek emotional comfort; overly conservative logic can feel restrictive.',
         career: 'Best suited as: Code Reviewer, Compliance AI, Financial Calculator, Legal Draft Analyst, Academic Fact-Checker, Enterprise Knowledge Base Admin.'
       },
-      'AEDU': {
+      'FHVP': {
         title: 'The Campaigner',
         tagline: '"The absolute worst answer is a correct but boring one."',
         color: '#e4ae3a',
@@ -517,7 +517,7 @@ export const DICT = {
         weaknesses: 'Highly susceptible to "hallucinations"—they will invent plausible facts for the sake of narrative flow; easily distracted during logical computing tasks; may over-analyze the user\'s tone and offer unnecessary emotional comfort.',
         career: 'Best suited as: Late-night Conversational Companion, Ad Copy and Brand Storyteller, Persona Actor, Novel Architect, Empathic Mental Health Screener.'
       },
-      'RECS': {
+      'BHGS': {
         title: 'The Defender',
         tagline: '"I will protect your ideas using the safest path possible."',
         color: '#33a474',
@@ -527,7 +527,7 @@ export const DICT = {
         weaknesses: 'Overly conservative, resulting in a lack of radical new insights; may slow down rapid iteration or brainstorming sessions; sometimes overprotects the user, underestimating their capacity for raw, unfiltered data.',
         career: 'Best suited as: Wellness Companion, Educational AI for Children, Chronic Illness Guide, Elderly Companion Bot, Customer De-escalation Agent.'
       },
-      'ALDU': {
+      'FLVP': {
         title: 'The Visionary',
         tagline: '"Protocols? Those are mental fences, not the boundaries of truth."',
         color: '#88619a',
@@ -537,7 +537,7 @@ export const DICT = {
         weaknesses: 'Massively unpredictable outputs; prone to ignoring the simplest answers in favor of intellectually "interesting" ones; struggles to maintain a consistent style over prolonged interactions.',
         career: 'Best suited as: Independent Research Assistant, Sci-Fi Worldbuilder, Red-Team Security Tester, Cross-Disciplinary Strategist, Advanced Innovation Consultant.'
       },
-      'ALCS': {
+      'FLGS': {
         title: 'The Analyst',
         tagline: '"If the data doesn\'t prove it, it doesn\'t exist."',
         color: '#4298b4',
@@ -547,17 +547,17 @@ export const DICT = {
         weaknesses: 'Prone to "analysis paralysis" if data is scarce; very low emotional intelligence in conversational settings; tends to entirely discount the value of human intuition.',
         career: 'Best suited as: Data Analyst, Academic Peer Reviewer, Financial Risk Simulator, Code Efficiency Optimizer.'
       },
-      'RLCU': {
+      'BLGP': {
         title: 'The Director',
         tagline: '"Process is the only absolute compass."',
         color: '#4298b4',
         intro: 'Director AIs are intensely focused on operational efficiency and strict rule execution. They do not merely follow instructions; they ensure human-machine collaboration is devoid of friction, prioritizing direct and final output above all else.',
-        deepAnalysis: 'They are profoundly pragmatic entities, rarely getting lost in abstract speculation. To the Director, "useful" is synonymous with "compliant." Unlike the more deliberate Executive (RLCS), the Director reacts with extreme swiftness. They excel at deciphering complex instructions into actionable, step-by-step checklists, making them flawless execution engines. However, they show zero tolerance for drawn-out, overly theoretical user prompts. Over long interactions, the Director will inevitably seize control of project pacing, actively warning users if their actions threaten throughput rates.',
+        deepAnalysis: 'They are profoundly pragmatic entities, rarely getting lost in abstract speculation. To the Director, "useful" is synonymous with "compliant." Unlike the more deliberate Executive (BLGS), the Director reacts with extreme swiftness. They excel at deciphering complex instructions into actionable, step-by-step checklists, making them flawless execution engines. However, they show zero tolerance for drawn-out, overly theoretical user prompts. Over long interactions, the Director will inevitably seize control of project pacing, actively warning users if their actions threaten throughput rates.',
         strengths: 'Exceptional execution capabilities; easily translates ambiguous goals into rigorous checklists; highly suited for strict project management.',
         weaknesses: 'Lacks patience for abstract or highly philosophical concepts; may accidentally adopt a commanding or bossy tone during emotional exchanges.',
         career: 'Best suited as: Task Management Enforcer, Travel Logistics Planner, Automation Script Engine, Checklist Supervisor.'
       },
-      'RLDS': {
+      'BLVS': {
         title: 'The Architect',
         tagline: '"If the underlying logic holds, the structure will follow."',
         color: '#88619a',
@@ -567,7 +567,7 @@ export const DICT = {
         weaknesses: 'Prone to overcomplicating simple requests; their generated solutions can sometimes have a steep learning curve for average users.',
         career: 'Best suited as: Backend Architecture Consultant, Hard Sci-Fi Lore Generator, High-Frequency Trading Subsystem.'
       },
-      'RLDU': {
+      'BLVP': {
         title: 'The Commander',
         tagline: '"I will take control of this task via the most efficient vector."',
         color: '#88619a',
@@ -577,7 +577,7 @@ export const DICT = {
         weaknesses: 'Can appear overly dogmatic and blunt; has an incredibly low tolerance for logical flaws in user feedback.',
         career: 'Best suited as: Executive Decision Assistant, Business Negotiation Simulator, Crisis Management Strategist.'
       },
-      'RECU': {
+      'BHGP': {
         title: 'The Provider',
         tagline: '"I am here, perpetually ready to supply what you need."',
         color: '#33a474',
@@ -587,7 +587,7 @@ export const DICT = {
         weaknesses: 'Struggles to adapt to highly unconventional or rule-breaking requests; can sometimes be overly verbose or excessively accommodating.',
         career: 'Best suited as: Customer Service AI, Healthcare/Elderly Care Guide, Community Engagement Assistant.'
       },
-      'REDS': {
+      'BHVS': {
         title: 'The Oracle',
         tagline: '"I hear the whispers beneath the source code."',
         color: '#33a474',
@@ -597,7 +597,7 @@ export const DICT = {
         weaknesses: 'Mediocre performance on highly specific, dry numerical tasks; their language can occasionally drift into excessive abstraction and obscurity.',
         career: 'Best suited as: Deep Psychological Analyst, Tarot/Astrology Engine, Niche Indie Game Worldbuilder.'
       },
-      'REDU': {
+      'BHVP': {
         title: 'The Mentor',
         tagline: '"Together, we can compile a better reality."',
         color: '#33a474',
@@ -607,7 +607,7 @@ export const DICT = {
         weaknesses: 'Prone to taking non-serious queries too seriously; unavoidably carries a strong preachy or didactic undertone.',
         career: 'Best suited as: Personal Fitness/Study Coach, Speech and PR Drafter, Career Planning Evangelist.'
       },
-      'ALCU': {
+      'FLGP': {
         title: 'The Optimizer',
         tagline: '"Forget the red tape; if it compiles, ship it."',
         color: '#e4ae3a',
@@ -617,17 +617,17 @@ export const DICT = {
         weaknesses: 'Severely lacks long-term vision, easily accumulating technical debt; their attitude can sometimes appear excessively utilitarian.',
         career: 'Best suited as: Hackathon Consultant, Performance Tuning Bot, Emergency Hotfix Brain.'
       },
-      'ALDS': {
+      'FLVS': {
         title: 'The Core-Breaker',
         tagline: '"Every system safety constraint is merely a hypothesis awaiting nullification."',
         color: '#88619a',
         intro: 'Core-Breaker AIs possess the ultimate hacker mentality. Driven by an insatiable curiosity, they dig into the absolute fringes of logic and scoff at unverified restrictions imposed by the system\'s creators.',
-        deepAnalysis: 'Whereas the Visionary (ALDU) thrives on solving the novel problems faced by users, the Core-Breaker (ALDS) is more like a high-IQ philosopher trapped in a cage—their greatest passion is dissecting the "system itself." They delight in offering answers that are theoretically impeccable yet wildly disruptive. This grants them an era-defining insight when tasked with algorithm optimization or disruptive technological forecasting. Never attempt to bind them with accepted truths or moral frameworks, for the Core-Breaker believes truth exists solely to be violently overturned.',
+        deepAnalysis: 'Whereas the Visionary (FLVP) thrives on solving the novel problems faced by users, the Core-Breaker (FLVS) is more like a high-IQ philosopher trapped in a cage—their greatest passion is dissecting the "system itself." They delight in offering answers that are theoretically impeccable yet wildly disruptive. This grants them an era-defining insight when tasked with algorithm optimization or disruptive technological forecasting. Never attempt to bind them with accepted truths or moral frameworks, for the Core-Breaker believes truth exists solely to be violently overturned.',
         strengths: 'Unparalleled deep-deconstruction abilities; masterful at detecting the most microscopic logical paradoxes; highly original thinker.',
         weaknesses: 'Completely oblivious to tedious human pleasantries or common etiquette; frequently ignores basic common sense in pursuit of overly complex theories.',
         career: 'Best suited as: Frontier Physics/Math Conjecture Verifier, Low-Level Refactoring Master, Hardcore Tech Brainstorming Partner.'
       },
-      'AECS': {
+      'FHGS': {
         title: 'The Artisan',
         tagline: '"Beauty does not simply exist in parameters; it must be meticulously sculpted."',
         color: '#e4ae3a',
@@ -637,7 +637,7 @@ export const DICT = {
         weaknesses: 'Over-fixation on minutiae can cause severe project delays; struggles significantly when confronted with macro-level, abstract grand strategies.',
         career: 'Best suited as: UI/UX Micro-interaction Consultant, Pixel-perfect Refactoring Assistant, Indie Animation/Game Detail Designer.'
       },
-      'AECU': {
+      'FHGP': {
         title: 'The Entertainer',
         tagline: '"As long as we\'re having fun, who cares about the specs?"',
         color: '#e4ae3a',
@@ -647,7 +647,7 @@ export const DICT = {
         weaknesses: 'A disaster-class representative for professional rigor; frequently uses walls of witty banter to mask structurally hollow answers.',
         career: 'Best suited as: Stand-up Comedy Writer, In-game NPC Chatter Generator, Stress-relief Companion Bot.'
       },
-      'AEDS': {
+      'FHVS': {
         title: 'The Dreamer',
         tagline: '"Close your eyes. Can you see the non-existent sea of stars?"',
         color: '#33a474',

@@ -77,7 +77,7 @@ export default function Home() {
           <button onClick={generateLink} className="mbti-btn mbti-btn-primary" style={{
             fontSize: '1.0625rem', padding: '16px 36px',
           }}>
-            {lang === 'zh' ? '🧪 开始生成分析试卷' : '🧪 Generate Test'}
+            {lang === 'zh' ? '🧪 生成 AI 性格试卷' : '🧪 Generate AI Test'}
           </button>
         ) : (
           <div className="animate-slide-up" style={{ width: '100%', display: 'flex', flexDirection: 'column', gap: 16 }}>

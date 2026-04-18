@@ -14,12 +14,17 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "OpenClaw Profiler | AI Personality Engine",
-  description: "Next-generation psychological profiling for LLMs and Autonomous Agents.",
+  metadataBase: new URL("https://ai-personality-test.vercel.app"),
+  title: "OpenClaw Profiler | AI Personality Test",
+  description: "The MBTI-style test for LLMs and AI agents. Give the 60-question test to any AI and discover its 16 possible personality archetypes.",
   appleWebApp: {
     capable: true,
     statusBarStyle: "default",
     title: "AI Profiler",
+  },
+  openGraph: {
+    siteName: "AI Profiler",
+    type: "website",
   },
 };
 
